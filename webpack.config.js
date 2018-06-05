@@ -14,17 +14,32 @@ module.exports = {
     mode: 'development',
     module: {
         rules: [{
-            test: /\.js$/,
-            exclude: /(node_modules|bower_components)/,
-            use: {
-                loader: 'babel-loader'
+                test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader'
 
+                }
+            },
+            {
+                test: /\.less$/,
+                loaders: [
+                    'style-loader',
+                    'css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
+                    'px2rem-loader?remUnit=40&remPrecision=8',
+                    'less-loader'
+                ]
             }
-        }]
+        ]
     },
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
         port: 9000
+    },
+    resolve: {
+        extensions: [
+            '.js', '.less', '.json'
+        ]
     },
     plugins: [
         new HtmlWebpackPlugin({
