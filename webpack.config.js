@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: {
@@ -18,17 +19,14 @@ module.exports = {
                 exclude: /(node_modules|bower_components)/,
                 use: {
                     loader: 'babel-loader'
-
                 }
             },
             {
                 test: /\.less$/,
-                loaders: [
-                    'style-loader',
-                    'css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
-                    'px2rem-loader?remUnit=40&remPrecision=8',
-                    'less-loader'
-                ]
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]','px2rem-loader?remUnit=40&remPrecision=8','less-loader']
+                })
             }
         ]
     },
@@ -44,7 +42,8 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './app/index.html'
-        })
+        }),
+        new ExtractTextPlugin("styles.css")
     ]
 
 }
