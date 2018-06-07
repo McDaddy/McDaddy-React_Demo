@@ -4,9 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-    entry: {
-        app: './app/js/index.js'
-    },
+    entry: ['./app/js/index.js','./app/js/viewport.js'],
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].bundle.js'
@@ -26,6 +24,13 @@ module.exports = {
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: ['css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]','px2rem-loader?remUnit=40&remPrecision=8','less-loader']
+                })
+            },
+            {
+                test: /\.css$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader','px2rem-loader?remUnit=40&remPrecision=8','less-loader']
                 })
             }
         ]
