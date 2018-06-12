@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/McDaddy/McDaddy-React_Demo#readme",
   "dependencies": {
+    "classnames": "^2.2.6",
     "css-loader": "^0.28.11",
     "px2rem-loader": "^0.1.9",
     "react": "^16.4.0",
