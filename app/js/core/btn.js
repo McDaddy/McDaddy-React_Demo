@@ -7,9 +7,9 @@ import CSSModules from 'react-css-modules';
  */
 export class Btn extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
-    let cname = 'default-btn ' + this.props.className;
     return (
       <div className={this.props.className} styleName='default-btn'>
+        {this.props.children}
       </div>
     );
   }
