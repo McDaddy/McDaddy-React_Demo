@@ -4,6 +4,9 @@ import Header from '../public/header';
 import Slider from '../component/slider';
 import IconList from '../component/iconList';
 import Investment from '../component/investment';
+import CrowdFunding from '../component/crowdFunding';
+import Footer from '../public/footer';
+import NavBar from '../public/navBar';
 import CSSModules from 'react-css-modules';
 import styles from '../../css/home.less';
 
@@ -28,6 +31,9 @@ class Home extends React.Component {
       </div>
 
       <Investment data={investmentList}/>
+      <CrowdFunding/>
+      <Footer/>
+      <NavBar/>
     </div>)
   }
 }
