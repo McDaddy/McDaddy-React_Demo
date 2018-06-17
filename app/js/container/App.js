@@ -1,5 +1,7 @@
 import React, {PropTypes} from 'react';
 import Home from './home';
+import Provider from 'redux';
+import store from '../store';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -7,9 +9,9 @@ export default class App extends React.Component {
   }
 
   render() {
-    return (<div>
+    return (<Provider store={store}>
       <Home/>
-    </div>);
+    </Provider>);
   }
 }
 

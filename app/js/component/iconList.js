@@ -1,11 +1,11 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PureComponent, PropTypes } from 'react';
 import CSSModules from 'react-css-modules';
 import styles from '../../css/home.less';
 
 /**
  * IconList
  */
-export class IconList extends Component { // eslint-disable-line react/prefer-stateless-function
+export class IconList extends PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
       <ul styleName='icon-list'>

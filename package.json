@@ -20,11 +20,13 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "css-loader": "^0.28.11",
+    "immutable": "^3.8.2",
     "px2rem-loader": "^0.1.9",
     "react": "^16.4.0",
     "react-css-modules": "^4.7.3",
     "react-dom": "^16.4.0",
     "react-id-swiper": "^1.6.4",
+    "react-redux": "^5.0.7",
     "redux": "^4.0.0",
     "style-loader": "^0.21.0"
   },

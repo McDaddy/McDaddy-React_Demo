@@ -4,7 +4,7 @@ import Panel from '../core/panel';
 import styles from '../../css/home.less';
 import Swiper from 'react-id-swiper';
 
-export class CrowdFunding extends React.Component {
+export class CrowdFunding extends React.PureComponent {
   constructor(props) {
     super(props);
   }
